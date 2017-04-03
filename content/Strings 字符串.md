@@ -59,7 +59,7 @@ fn main() {
 }
 ```
 
-这种强制转换并不发生在接受`&str`的trait而不是`&str`本身作为参数的函数上。例如，[TcpStream::connect](http://doc.rust-lang.org/stable/std/net/struct.TcpStream.html#method.connect)，有一个`ToSocketAddrs`类型的参数。`&str`可以不用转换不过`String`必须使用`&*`显式转换。
+这种强制转换并不发生在那些接受`&str`的trait而不是`&str`本身作为参数的函数上。例如，[TcpStream::connect](http://doc.rust-lang.org/stable/std/net/struct.TcpStream.html#method.connect)，有一个`ToSocketAddrs`类型的参数。`&str`是可以的，不过`String`必须使用`&*`显式转换。
 
 ```rust
 use std::net::TcpStream;
@@ -112,7 +112,7 @@ println!("");
 你可以这样来获取跟索引相似的东西：
 
 ```rust
-# let hachiko = "忠犬ハチ公";
+//let hachiko = "忠犬ハチ公";
 let dog = hachiko.chars().nth(1); // Kinda like `hachiko[1]`.
 ```
 

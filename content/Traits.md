@@ -267,11 +267,7 @@ let result = f.write(buf);
 
 这还有一个实现 trait 的限制。要么是 trait 要么是你写实现的类型必须由你定义。更准确的说，它们中的一个必须定义于你编写`impl`的相同的 crate 中。关于 Rust 的模块和包系统，详见[crate 和模块](Crates and Modules crate 和模块.md)。
 
-所以，我们可以为`i32`实现`HasArea`trait，因为`HasArea`在我们的包装箱中。不过如果我们想为`i32`实现`Float`trait，它是由 Rust 提供的，则无法做到，因为这个 trait 和类型都不在我们的包装箱中。
-
-
-
-There’s one more restriction on implementing traits: either the trait or the type you’re implementing it for must be defined by you. Or more precisely, one of them must be defined in the same crate as the impl you're writing. For more on Rust's module and package system, see the chapter on crates and modules.
+所以，我们可以为`i32`实现`HasArea`trait，因为`HasArea`在我们的包装箱中。不过如果我们想为`i32`实现`ToString`trait，它是由 Rust 提供的，则无法做到，因为这个 trait 和类型都不在我们的包装箱中。
 
 关于trait的最后一点：带有trait限制的泛型函数是**单态**（*monomorphization*）（mono：单一，morph：形式）的，所以它是**静态分发**（*statically dispatched*）的。这是什么意思？查看[trait对象](Trait Objects trait 对象.md)来了解更多细节。
 
